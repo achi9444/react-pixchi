@@ -1,0 +1,30 @@
+#topbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 75px;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 80px;
+        align-items: center;
+
+        img {
+            width: 50px;
+        }
+
+        ul {
+            display: flex;
+            gap: 20px;
+
+            li {
+                a {
+                    color: #6C472B;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}

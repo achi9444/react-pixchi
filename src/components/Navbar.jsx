@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../styles/Navbar.scss"
 
-const Navbar = () => {
+const Navbar = ({ theme }) => {
     return (
         <>
             <header id='topbar'>
-                <nav className='nav'>
+                <nav className={`nav ${theme}`}>
                     <Link to="/">
                         <div className='logo'>
                             <img src="./logo.png" alt="" />

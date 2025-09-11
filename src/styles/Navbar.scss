@@ -7,8 +7,10 @@
     .nav {
         display: flex;
         justify-content: space-between;
-        margin: 5px 80px;
+        padding: 5px 80px;
         align-items: center;
+        width: 100%;
+        z-index: 999;
 
         img {
             width: 50px;
@@ -16,7 +18,7 @@
 
         ul {
             display: flex;
-            gap: 20px;
+            gap: 30px;
 
             li {
                 a {
@@ -25,6 +27,15 @@
                 }
             }
         }
-    }
 
+        &.blue {
+            background-color: rgba(210, 241, 255, 0.5);
+            border-bottom: 3px solid rgba(81, 203, 255, 0.5);
+        }
+
+        &.brown {
+            background-color: rgba(244, 241, 237, 0.5);
+            border-bottom: 3px solid rgba(226, 195, 154, 0.5);
+        }
+    }
 }

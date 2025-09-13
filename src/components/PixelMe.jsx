@@ -63,13 +63,18 @@ const colors = {
     11: '#E49C5C',
 };
 
-const PixelMe = ({ onFinish }) => {
+const PixelMe = ({ mode = 'auto', onFinish, onReady }) => {
     const gridRef = useRef(null);
+    const [animationDone, setAnimationDone] = useState(false);
+    // 判斷動靜
+    const navType = performance.getEntriesByType('navigation')[0]?.type;
+    const shouldAnimate = navType === 'navigate' || navType === 'reload';
+    const isLoading = mode === 'animated';
 
     useEffect(() => {
+
         // 放東西的空陣列
         const pixels = [];
-
         // 生成所有像素數據
         for (let y = map.length - 1; y >= 0; y--) {
             for (let x = 0; x < map[y].length; x++) {
@@ -80,6 +85,27 @@ const PixelMe = ({ onFinish }) => {
                 pixels.push({ x, y, color: colors[type] });
             }
         }
+        // 靜態
+        if (mode === 'static') {
+            // 清空舊內容，避免重複渲染
+            gridRef.current.innerHTML = '';
+
+            // 靜態渲染所有像素
+            pixels.forEach(({ x, y, color }) => {
+                const div = document.createElement('div');
+                div.className = 'allPixel';
+                div.style.left = `${x * pixelSize}px`;
+                div.style.bottom = `${(map.length - 1 - y) * pixelSize}px`;
+                div.style.backgroundColor = color;
+                gridRef.current.appendChild(div);
+            });
+            // setAnimationDone(true);
+            setTimeout(() => {
+                onReady?.();
+            }, 300);
+            return;
+        }
+
         // 打亂陣列排序，亂數-0.5，回傳值正負不同使陣列重新排序
         const shuffled = pixels.sort(() => Math.random() - 0.5);
 
@@ -94,8 +120,6 @@ const PixelMe = ({ onFinish }) => {
 
         let startTime = null;
 
-        let i = 0;
-
         const animate = (timestamp) => {
             if (!startTime) startTime = timestamp;
             const elapsed = timestamp - startTime;
@@ -106,7 +130,6 @@ const PixelMe = ({ onFinish }) => {
             // 確認現在有哪幾個沒有被加入
             for (let i = gridRef.current.childElementCount; i < targetCount; i++) {
                 const { x, y, color } = shuffled[i];
-
                 const div = document.createElement('div');
                 // 加入名稱(用在css動畫)
                 div.className = 'pixel';
@@ -114,7 +137,6 @@ const PixelMe = ({ onFinish }) => {
                 div.style.left = `${x * pixelSize}px`;
                 div.style.bottom = `${(map.length - 1 - y) * pixelSize}px`;
                 div.style.backgroundColor = color;
-                // div.style.animationDelay = `${Math.random() * 0.5}s`;
                 div.addEventListener('animationend', () => {
                     // 移除名稱(靜態)
                     div.classList.remove('pixel');
@@ -128,23 +150,44 @@ const PixelMe = ({ onFinish }) => {
                 // 刷新同步不掉幀
                 requestAnimationFrame(animate);
             } else {
-                onFinish && setTimeout(onFinish, 600);
+                if (onFinish) {
+                    setTimeout(() => {
+                        setAnimationDone(true);
+                        onFinish?.();
+                    }, 600)
+                }
             }
         };
         requestAnimationFrame(animate);
-    }, []); // 只執行一次
+    }, [isLoading]); // 只執行一次
 
     return (
-        <div className="myBox">
-            <div
-                className="me"
-                ref={gridRef}
-                style={{
-                    // 完整圖的橫向格數*格子尺寸
-                    width: `${map[0].length * pixelSize}px`,
-                }}
-            />
-        </div>
+        <>
+            <div className="myBox">
+                <div
+                    className="me"
+                    ref={gridRef}
+                    style={{
+                        // 完整圖的橫向格數*格子尺寸
+                        width: `${map[0].length * pixelSize}px`,
+                    }}
+                />
+            </div>
+            {mode === 'static' && (
+                <>
+                    <div className="overlayContent">
+                        <h1 className="title">拼豆，不只是玩具</h1>
+                        <p className="slogan left">是創作的語言</p>
+                        <p className="slogan right">是療癒的儀式</p>
+                    </div>
+                    <div >
+                        <h1 className="title">拼豆，不只是玩具</h1>
+                        <p className="slogan left">是創作的語言</p>
+                        <p className="slogan right">是療癒的儀式</p>
+                    </div>
+                </>
+            )}
+        </>
     );
 };
 

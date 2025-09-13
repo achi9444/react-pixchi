@@ -14,24 +14,30 @@ const App = () => {
   const pathname = location.pathname;
   const isHome = pathname === '/';
   const theme = isHome ? 'blue' : 'brown';
-  const [animationDone, setAnimationDone] = useState(false);
-  console.log(theme)
+
+  // 判斷是否是首次載入或重新整理
+  const navType = performance.getEntriesByType('navigation')[0]?.type;
+  const shouldPlayAnimation = isHome && (navType === 'navigate' || navType === 'reload');
+
+  const [animationDone, setAnimationDone] = useState(!shouldPlayAnimation);
   return (
     <>
       {/* 載入完成後才顯示導覽列 */}
       {animationDone && <Navbar theme={theme} />}
 
       {/* PixelMe 在載入階段覆蓋整個畫面，完成後變為靜態元素 */}
-      <PixelMe
-        isLoading={!animationDone}
-        onFinish={() => setAnimationDone(true)}
-      />
+      {isHome && (
+  <PixelMe
+    mode={animationDone ? "static" : "animated"}
+    onFinish={() => setAnimationDone(true)}
+  />
+)}
 
       {/* 載入完成後才顯示內容和 Footer */}
       {animationDone && (
         <>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home mode="static" />} />
             <Route path='/Materialize' element={<Materialize />} />
             <Route path='/HealingCorner' element={<HealingCorner />} />
             <Route path='/Classroom' element={<Classroom />} />

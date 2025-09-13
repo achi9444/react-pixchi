@@ -1,4 +1,3 @@
-// 兼容原有的 .gridWrapper（如果沒有額外類名）
 .myBox {
     position: relative; // 改為 relative，避免覆蓋其他元素
     width: 100%;
@@ -7,7 +6,9 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: linear-gradient(to bottom, #E5F8FF, #74C9E7);
+    background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("./bg_1.jpg") center/cover no-repeat;
+    // z-index: -10;
+    pointer-events: none; // 不擋互動
 
     .me {
         position: absolute;
@@ -39,4 +40,10 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.overlayContent {
+    position: absolute;
+    z-index: 10;
+    top: 0;
 }

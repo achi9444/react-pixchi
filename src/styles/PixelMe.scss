@@ -1,0 +1,42 @@
+// 兼容原有的 .gridWrapper（如果沒有額外類名）
+.myBox {
+    position: relative; // 改為 relative，避免覆蓋其他元素
+    width: 100%;
+    min-height: 100vh; // 改為合理的高度
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #E5F8FF, #74C9E7);
+
+    .me {
+        position: absolute;
+        bottom: 150px;
+        width: 100%;
+    }
+
+    .pixel {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        transform: translateY(-10vh);
+        opacity: 0;
+        animation: fall 0.8s ease forwards;
+        will-change: transform, opacity;
+    }
+
+    .allPixel {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

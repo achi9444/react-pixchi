@@ -126,3 +126,8 @@ a {
     color: ColorValues;
     text-decoration: none;
 }
+
+/* 永遠保留滾動條 */
+html {
+    overflow-y: scroll;
+}

@@ -1,8 +1,10 @@
 .myBox {
-    position: relative; // 改為 relative，避免覆蓋其他元素
+    // position: relative; // 改為 relative，避免覆蓋其他元素
     width: 100%;
-    min-height: 100vh; // 改為合理的高度
+    min-height: 100%; // 改為合理的高度
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -12,7 +14,7 @@
 
     .me {
         position: absolute;
-        bottom: 150px;
+        // bottom: 220px;
         width: 100%;
     }
 
@@ -40,10 +42,4 @@
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-.overlayContent {
-    position: absolute;
-    z-index: 10;
-    top: 0;
 }

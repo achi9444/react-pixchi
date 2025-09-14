@@ -1,0 +1,125 @@
+@use "./variables" as *;
+
+.top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("./bg_1.jpg") center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+
+    .top1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 75px;
+        gap: 100px;
+
+        h2 {
+            color: $c_rl;
+            font-size: 4rem;
+            font-weight: 700;
+            // white-space: nowrap;
+            padding-left: 1.2rem;
+            letter-spacing: 1.2rem;
+        }
+
+        .h_me {
+            all: unset;
+            position: relative;
+            // width: 330px;
+            min-height: 545px;
+            transform: scale(0.85);
+            transform-origin: bottom center;
+            pointer-events: auto;
+            // display: flex;
+            // justify-content: center;
+            // align-items: flex-end; // 角色貼底部
+
+            .me {
+                position: relative; // 改成相對定位，讓它參與排版
+                width: 100%;
+            }
+        }
+    }
+
+    .notToy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('./decorate_3.png');
+            width: 50px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 35%;
+            left: -20%;
+        }
+
+        h2 {
+
+            font-size: 6rem;
+            font-weight: 700;
+            padding-left: 3rem;
+            letter-spacing: 3rem;
+            line-height: normal;
+            color: #FEF2BD;
+            // -webkit-text-stroke: #D0955B 3px;
+            text-shadow:
+                -5px -5px 0 #D0955B,
+                5px -5px 0 #D0955B,
+                -5px 5px 0 #D0955B,
+                5px 5px 0 #D0955B;
+        }
+
+        p {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: $c_rd;
+        }
+
+        img {
+            width: 40%;
+            margin: 10px 0;
+            animation: arrow 2.5s ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    .decorate {
+        position: absolute;
+        width: 300px;
+
+        &.dec1 {
+            top: 7%;
+            left: -1%;
+        }
+
+        &.dec2 {
+            bottom: 0;
+            right: -2%;
+        }
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -63,7 +63,7 @@ const colors = {
     11: '#E49C5C',
 };
 
-const PixelMe = ({ mode = 'auto', onFinish, onReady }) => {
+const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
     const gridRef = useRef(null);
     const [animationDone, setAnimationDone] = useState(false);
     // 判斷動靜
@@ -99,10 +99,9 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady }) => {
                 div.style.backgroundColor = color;
                 gridRef.current.appendChild(div);
             });
-            // setAnimationDone(true);
             setTimeout(() => {
                 onReady?.();
-            }, 300);
+            }, 600);
             return;
         }
 
@@ -163,30 +162,17 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady }) => {
 
     return (
         <>
-            <div className="myBox">
+            <div className={`myBox ${className || ''}`}>
                 <div
                     className="me"
                     ref={gridRef}
                     style={{
                         // 完整圖的橫向格數*格子尺寸
                         width: `${map[0].length * pixelSize}px`,
+                        height: `${map.length * pixelSize}px`,
                     }}
                 />
             </div>
-            {mode === 'static' && (
-                <>
-                    <div className="overlayContent">
-                        <h1 className="title">拼豆，不只是玩具</h1>
-                        <p className="slogan left">是創作的語言</p>
-                        <p className="slogan right">是療癒的儀式</p>
-                    </div>
-                    <div >
-                        <h1 className="title">拼豆，不只是玩具</h1>
-                        <p className="slogan left">是創作的語言</p>
-                        <p className="slogan right">是療癒的儀式</p>
-                    </div>
-                </>
-            )}
         </>
     );
 };

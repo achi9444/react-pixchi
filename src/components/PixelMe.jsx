@@ -148,7 +148,8 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
             if (progress < 1) {
                 // 刷新同步不掉幀
                 requestAnimationFrame(animate);
-            } else {
+            } 
+            else {
                 if (onFinish) {
                     setTimeout(() => {
                         setAnimationDone(true);

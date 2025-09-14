@@ -22,7 +22,41 @@ const Home = () => {
                         <img className='decorate dec2' src="./decorate_2.png" alt="decorate" />
                     </div>
                 </header>
-
+                <section className='portfolio'>
+                    <div className='portTitle'>
+                        <h2>實體化計畫</h2>
+                        <p>從像素到拼豆</p>
+                    </div>
+                    <div className='portout'>
+                        <div className='portCard'>
+                            <div className='card dino'>
+                                <a href="#">
+                                    首度同行
+                                    <img src="./more.png" alt="" />
+                                </a>
+                            </div>
+                            <p>從第一顆拼豆開始，角色靜靜陪你走進創作的世界，打造屬於自己的小作品，開啟創作旅程</p>
+                        </div>
+                        <div className='portCard'>
+                            <div className='card bird'>
+                                <a href="#">
+                                    進階試煉
+                                    <img src="./more.png" alt="" />
+                                </a>
+                            </div>
+                            <p>創作開始有了節奏，挑戰更複雜的圖案和設計，探索更多色彩搭配和細節呈現</p>
+                        </div>
+                        <div className='portCard'>
+                            <div className='card lcd'>
+                                <a href="#">
+                                    名匠之路
+                                    <img src="./more.png" alt="" />
+                                </a>
+                            </div>
+                            <p>每一顆拼豆都在說故事，無論是細緻的拼接還是大型作品，都成為了你的創作哲學</p>
+                        </div>
+                    </div>
+                </section>
             </main>
         </>
     );

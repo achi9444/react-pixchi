@@ -10,7 +10,7 @@ main {
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        height: 100vh;
+        height: 950px;
         width: 100%;
 
         .top1 {
@@ -23,7 +23,7 @@ main {
             h2 {
                 color: $c_rl;
                 font-size: 4rem;
-                font-weight: 700;
+                font-weight: $fw7;
                 // white-space: nowrap;
                 padding-left: 1.2rem;
                 letter-spacing: 1.2rem;
@@ -70,7 +70,7 @@ main {
             h2 {
 
                 font-size: 6rem;
-                font-weight: 700;
+                font-weight: $fw7;
                 padding-left: 3rem;
                 letter-spacing: 3rem;
                 line-height: normal;
@@ -85,7 +85,7 @@ main {
 
             p {
                 font-size: 2.5rem;
-                font-weight: 700;
+                font-weight: $fw7;
                 color: $c_rd;
                 padding-left: .8rem;
                 letter-spacing: .8rem;
@@ -132,8 +132,8 @@ main {
     .portfolio {
         // position: relative;
         width: 100%;
-        height: 100vh;
-        background-image: url('/bg_2_2.png');
+        height: 918px;
+        background-image: url('/bg_2.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -142,6 +142,7 @@ main {
         justify-content: center;
         align-items: center;
         gap: 30px;
+        padding: 0 180px;
 
         .portTitle {
             display: flex;
@@ -164,7 +165,7 @@ main {
 
             h2 {
                 font-size: 3rem;
-                font-weight: 700;
+                font-weight: $fw7;
                 color: $c_rd;
                 padding-left: calc(.8rem + 40px);
                 padding-right: 40px;
@@ -174,18 +175,18 @@ main {
 
             p {
                 font-size: 1.8rem;
-                font-weight: 700;
+                font-weight: $fw7;
                 color: $c_rl;
                 padding-left: 1.5rem;
                 letter-spacing: 1.5rem;
             }
         }
 
-        .portout {
+        .portOut {
             max-width: 1300px;
             display: flex;
             justify-content: center;
-            width: 80%;
+            width: 90%;
             gap: 100px;
 
             .portCard {
@@ -209,8 +210,7 @@ main {
                     border-radius: 16px;
                     display: flex;
                     align-items: flex-end;
-                    justify-content: end;
-
+                    justify-content: space-between;
 
                     &.dino {
                         background-image: url("/dino.png");
@@ -222,6 +222,18 @@ main {
 
                     &.lcd {
                         background-image: url("/LCD.png");
+                    }
+
+                    .level {
+                        position: relative;
+                        display: flex;
+                        gap: 2px;
+                        left: 2%;
+                        bottom: -4%;
+
+                        img {
+                            width: 35px;
+                        }
                     }
 
                     a {
@@ -252,6 +264,160 @@ main {
                     display: flex;
                     align-items: flex-start;
                 }
+            }
+        }
+    }
+
+    .coner {
+        background: linear-gradient(to bottom, rgb(116, 201, 231, .1), rgb(116, 201, 231, .3), rgb(229, 248, 255, .7));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 1000px;
+        gap: 60px;
+        padding: 0 180px;
+
+        .conTiBox {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            padding-left: 50px;
+
+            .conTitle {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-image: url('/decorate_3_3.png');
+                    width: 50px;
+                    height: 100px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    top: 17%;
+                    left: -20%;
+                }
+
+                h2 {
+                    font-size: 3rem;
+                    font-weight: $fw7;
+                    color: $c_rd;
+                    padding-right: 160px;
+                    letter-spacing: .8rem;
+                    border-bottom: $c_rg 3px solid;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    font-weight: $fw7;
+                    color: $c_rl;
+                    letter-spacing: 1.5rem;
+                }
+            }
+        }
+
+        .conOut {
+            max-width: 1300px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 90%;
+            gap: 100px;
+
+            .conBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 360px;
+                    height: 250px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    padding: 7% 5% 18%;
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: $fw7;
+                        color: $c_22;
+                        letter-spacing: .5rem;
+                        padding-left: .5rem;
+                        white-space: nowrap;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: $fw5;
+                        color: $c_22;
+                        letter-spacing: .4rem;
+                        padding-left: .4rem;
+                        margin: 0 10px;
+                    }
+                }
+            }
+
+            .conBox1 {
+                .box1_1 {
+                    background-image: url('/bub1.png');
+                }
+
+                img {
+                    width: 70%;
+                }
+            }
+
+            .conBox2 {
+
+                .box2_1 {
+                    background-image: url('/bub3.png');
+                }
+
+                .box2_2 {
+                    display: flex;
+                    gap: 30px;
+
+                    img {
+                        width: 80px;
+                    }
+                }
+            }
+
+            .conBox3 {
+
+                .box3_1 {
+                    background-image: url('/bub2.png');
+                }
+
+                img {
+                    width: 90%;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+
+        .toCor {
+            display: flex;
+            align-items: center;
+            background-color: $c_bw;
+            font-family: $family-stick;
+            color: $c_33;
+            font-size: 1.4rem;
+            box-shadow: 4px 4px 0 0 rgba($c_b , .9);
+            gap: 3px;
+            padding: 0 8px;
+
+            img {
+                width: 12px;
+                height: auto;
             }
         }
     }

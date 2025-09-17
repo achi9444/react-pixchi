@@ -17,9 +17,9 @@ const Footer = () => {
                         <li><Link to='/About'>關於我</Link></li>
                     </ul>
                     <div>
-                        <a href=""><img src='./fb_icon.png' alt="" /></a>
-                        <a href=""><img src='./ig_icon.png' alt="" /></a>
-                        <a href=""><img src='./yt_icon.png' alt="" /></a>
+                        <a href="" target="_blank" rel="noopener noreferrer"><img src='./fb_icon.png' alt="" /></a>
+                        <a href="" target="_blank" rel="noopener noreferrer"><img src='./ig_icon.png' alt="" /></a>
+                        <a href="https://www.youtube.com/@sharkachi" target="_blank" rel="noopener noreferrer"><img src='./yt_icon.png' alt="" /></a>
                     </div>
                 </nav>
                 <small className='copyright'>

@@ -3,6 +3,10 @@
 .healMain {
     padding-top: 69px;
     background: #FFFDF3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     header {
         display: flex;
@@ -15,6 +19,8 @@
             font-size: 3.7rem;
             letter-spacing: 1.2rem;
             padding-left: 1.2rem;
+            color: $c_22;
+            white-space: nowrap;
         }
 
         h3 {
@@ -35,6 +41,8 @@
             line-height: 200%;
             letter-spacing: .3rem;
             padding-left: .3rem;
+            color: $c_22;
+            white-space: nowrap;
         }
 
         .healTop {
@@ -75,6 +83,7 @@
             align-items: center;
             width: 70%;
             position: relative;
+            padding-top: 100px;
 
             img {
                 width: 35%;
@@ -93,11 +102,105 @@
                 all: unset;
                 position: absolute;
                 width: 20%;
+                top: 50%;
+                right: -23%;
+            }
+        }
+    }
 
-                &.dec4 {
-                    top: 50%;
-                    right: -23%;
+    .healBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        margin: 150px 0 100px;
+        gap: 100px;
+
+        >div {
+            gap: 30px;
+        }
+
+        h4 {
+            font-size: 2rem;
+            color: $c_33;
+            font-weight: $fw7;
+            letter-spacing: 1.5rem;
+            padding-left: 1.5rem;
+            white-space: nowrap;
+        }
+
+        .horiLine {
+            width: 300px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 200%;
+            letter-spacing: .3rem;
+            padding-left: .3rem;
+            color: $c_22;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .heal1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .healBean {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                img {
+                    width: 60px;
+                    height: auto;
+                    margin-top: 50px;
                 }
+            }
+        }
+
+        .heal2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .focusTrain {
+                width: 250px;
+                height: auto;
+                margin-top: 50px;
+            }
+        }
+
+        .heal3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .colerful {
+                width: 350px;
+                height: auto;
+                margin-top: 50px;
+            }
+        }
+
+        .heal4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .healTxtBox {
+                display: flex;
+                align-items: end;
+                
+                img {
+                    width: 80px;
+                    height: auto;
+                    transform: scaleX(-1);
+                }
+
             }
         }
     }

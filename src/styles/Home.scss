@@ -220,6 +220,7 @@ main {
                     display: flex;
                     align-items: flex-end;
                     justify-content: space-between;
+                    position: relative;
 
                     &.dino {
                         background-image: url("/dino.png");
@@ -248,7 +249,7 @@ main {
                     a {
                         display: flex;
                         align-items: center;
-                        position: relative;
+                        position: absolute;
                         font-size: 1.4rem;
                         font-family: $family-stick;
                         background-color: $c_yw;
@@ -264,7 +265,6 @@ main {
                             height: auto;
                         }
                     }
-
                 }
 
                 p {

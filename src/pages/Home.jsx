@@ -104,7 +104,7 @@ const Home = () => {
                         </div>
                     </div>
                     <NavLink to={'/HealingCorner'} className={'toCor'}>
-                        深層空間<img src="./more.png" alt="more" />
+                        探索角落<img src="./more.png" alt="more" />
                     </NavLink>
                 </section>
                 <section className='myJourney'>

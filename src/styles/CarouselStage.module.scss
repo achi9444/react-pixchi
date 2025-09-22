@@ -1,0 +1,113 @@
+@use "./variables" as *;
+
+.stage {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url("/bg_8.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    // background: radial-gradient(ellipse at center, #cfa16d, #ffd39f);
+    overflow: hidden;
+    box-shadow: 0 3px 20px rgb(0, 0, 0, .3);
+
+    .controls {
+        position: absolute;
+        bottom: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        width: 97%;
+
+        button {
+            padding: 8px 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 70px;
+            height: 100px;
+        }
+    }
+}
+
+.itemWrapper {
+    position: absolute;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    transition: transform 0.6s ease;
+
+    .leader {
+        position: absolute;
+        bottom: -75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 1.5rem;
+            background-color: $c_rl;
+            color: $c_yw;
+            letter-spacing: .8rem;
+            padding-left: .8rem;
+        }
+
+        h4 {
+            color: $c_rd;
+            line-height: 200%;
+        }
+    }
+}
+
+.spotlight {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    clip-path: polygon(45% 0, 55% 0, 100% 100%, 0% 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.flash {
+    opacity: 1;
+}
+
+.carousel {
+    position: relative;
+    height: 40%;
+}
+
+.item {
+    position: absolute;
+    top: 50%;
+    transform: translateY(40%);
+    max-height: 100%;
+    max-width: 100%;
+    width: 350px;
+    height: 350px;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    display: block;
+}
+
+.center {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.side {
+    scale: 0.6;
+    opacity: 0.7;
+}

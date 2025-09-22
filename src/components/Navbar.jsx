@@ -9,7 +9,7 @@ const Navbar = ({ theme }) => {
                 <nav className={`nav ${theme}`}>
                     <Link to="/">
                         <div className='logo'>
-                            <img src="./logo.png" alt="" />
+                            <img src="./logo.webp" alt="PixChi" loading="lazy" />
                         </div>
                     </Link>
                     <ul>

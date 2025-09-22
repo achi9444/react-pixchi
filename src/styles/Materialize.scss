@@ -1,0 +1,154 @@
+@use "./variables" as *;
+
+.materMain {
+    padding-top: 69px;
+    background: #FFFDF3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+
+    .materHeader{
+        height: 500px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 80px;
+        justify-content: center;
+    }
+    .materTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 80px;
+        position: relative;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: $fw7;
+            color: $c_rd;
+            letter-spacing: .8rem;
+            padding-left: .8rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-weight: $fw7;
+            color: $c_rl;
+            letter-spacing: 1.2rem;
+            padding-left: 1.2rem;
+            border-top: $c_rg 3px solid;
+        }
+
+    }
+
+    section {
+        width: 80%;
+        margin-bottom: 100px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        .workBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+
+            .titleBox {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+
+                h3 {
+                    font-family: $family-stick;
+                    font-size: 2.25rem;
+                    background-color: $c_rd;
+                    box-shadow: 4px 4px 0 0 $c_rw;
+                    color: $c_yw;
+                    letter-spacing: .5rem;
+                    padding-left: .5rem;
+                    width: 230px;
+                    white-space: nowrap;
+                    text-align: center;
+                    // margin-bottom: 80px;
+                }
+            }
+
+            .cardList {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                margin-bottom: 30px;
+
+                .workCard {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+                    margin-bottom: 30px;
+
+                    img {
+                        aspect-ratio: 1 / 1;
+                        width: 60%;
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                        color: $c_22;
+                        line-height: 150%;
+                    }
+                }
+            }
+        }
+    }
+
+    .level1 {
+        .materTitle {
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url('/star.webp');
+                width: 50px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: 37%;
+                right: 30%;
+            }
+        }
+    }
+
+    .level2 {
+        .materTitle {
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url('/star2.webp');
+                width: 100px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: 37%;
+                right: 30%;
+            }
+        }
+    }
+
+    .level3 {
+        .materTitle {
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url('/star3.webp');
+                width: 150px;
+                height: 50px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: 37%;
+                right: 25%;
+            }
+        }
+    }
+}

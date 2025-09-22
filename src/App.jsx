@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
-import Materialize from './pages/Materialize'
-import HealingCorner from './pages/HealingCorner'
-import Classroom from './pages/Classroom'
-import About from './pages/About'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PixelMe from './components/PixelMe'
+import ScrollToTop from "./js/ScrollToTop";
+
+// lazy其他頁面
+const Materialize = lazy(() => import('./pages/Materialize'));
+const HealingCorner = lazy(() => import('./pages/HealingCorner'));
+const Classroom = lazy(() => import('./pages/Classroom'));
+const About = lazy(() => import('./pages/About'));
 
 const App = () => {
   const location = useLocation();
@@ -19,6 +22,26 @@ const App = () => {
   const navType = performance.getEntriesByType('navigation')[0]?.type;
   const shouldPlayAnimation = isHome && (navType === 'navigate' || navType === 'reload');
   const [animationDone, setAnimationDone] = useState(!shouldPlayAnimation);
+
+  // 預抓其他頁面
+  useEffect(() => {
+    const warmuup = () => {
+      Promise.all([
+        import('./pages/Materialize'),
+        import('./pages/HealingCorner'),
+        import('./pages/Classroom'),
+        import('./pages/About')
+      ]).catch(() => { });
+    };
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(warmuup, { timeout: 2000 });
+    } else {
+      const t = setTimeout(warmuup, 2000);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+
   return (
     <>
       {/* 載入完成後才顯示導覽列 */}
@@ -31,20 +54,22 @@ const App = () => {
           onFinish={() => setAnimationDone(true)}
         />
       )}
-
-      {/* 載入完成後才顯示內容和 Footer */}
-      {animationDone && (
-        <>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/Materialize' element={<Materialize />} />
-            <Route path='/HealingCorner' element={<HealingCorner />} />
-            <Route path='/Classroom' element={<Classroom />} />
-            <Route path='/About' element={<About />} />
-          </Routes>
-          <Footer />
-        </>
-      )}
+      <ScrollToTop />
+      <Suspense fallback={null}>
+        {/* 載入完成後才顯示內容和 Footer */}
+        {animationDone && (
+          <>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/Materialize' element={<Materialize />} />
+              <Route path='/HealingCorner' element={<HealingCorner />} />
+              <Route path='/Classroom' element={<Classroom />} />
+              <Route path='/About' element={<About />} />
+            </Routes>
+            <Footer />
+          </>
+        )}
+      </Suspense>
     </>
   )
 }

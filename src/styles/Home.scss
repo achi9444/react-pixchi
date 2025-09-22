@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
-main {
-    background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("/bg_1.jpg") center/cover no-repeat;
+.homeMain {
+    background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("/bg_1.webp") center/cover no-repeat;
     overflow: hidden;
 
     .tiH2 {
@@ -74,7 +74,7 @@ main {
             &::before {
                 content: '';
                 position: absolute;
-                background-image: url('/decorate_3.png');
+                background-image: url('/decorate_3.webp');
                 width: 50px;
                 height: 100px;
                 background-size: contain;
@@ -149,7 +149,7 @@ main {
         // position: relative;
         width: 100%;
         height: 918px;
-        background-image: url('/bg_2.png');
+        background-image: url('/bg_2.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -170,7 +170,7 @@ main {
             &::before {
                 content: '';
                 position: absolute;
-                background-image: url('/decorate_3_2.png');
+                background-image: url('/decorate_3_2.webp');
                 width: 50px;
                 height: 100px;
                 background-size: contain;
@@ -223,15 +223,15 @@ main {
                     position: relative;
 
                     &.dino {
-                        background-image: url("/dino.png");
+                        background-image: url("/compression/tyrannosaurus2.webp");
                     }
 
                     &.bird {
-                        background-image: url("/bird.png");
+                        background-image: url("/compression/bird.webp");
                     }
 
                     &.lcd {
-                        background-image: url("/LCD.png");
+                        background-image: url("/compression/LCD.webp");
                     }
 
                     .level {
@@ -303,7 +303,7 @@ main {
                 &::before {
                     content: '';
                     position: absolute;
-                    background-image: url('/decorate_3_3.png');
+                    background-image: url('/decorate_3_3.webp');
                     width: 50px;
                     height: 100px;
                     background-size: contain;
@@ -365,7 +365,7 @@ main {
 
             .conBox1 {
                 .box1_1 {
-                    background-image: url('/bub1.png');
+                    background-image: url('/bub1.webp');
                 }
 
                 img {
@@ -377,7 +377,7 @@ main {
                 height: auto;
 
                 .box2_1 {
-                    background-image: url('/bub3.png');
+                    background-image: url('/bub3.webp');
                 }
 
                 .box2_2 {
@@ -395,7 +395,7 @@ main {
             .conBox3 {
 
                 .box3_1 {
-                    background-image: url('/bub2.png');
+                    background-image: url('/bub2.webp');
                 }
 
                 img {
@@ -430,7 +430,7 @@ main {
         align-items: end;
 
         .jouBg {
-            background-image: url("/bg_6.webp");
+            background-image: url("/bg_9.webp");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
@@ -445,13 +445,13 @@ main {
             &::before {
                 content: '';
                 position: absolute;
-                background-image: url('/me.png');
+                background-image: url('/me.webp');
                 width: 130px;
                 height: 270px;
                 background-size: contain;
                 background-repeat: no-repeat;
                 top: 55%;
-                left: 48%;
+                left: 30%;
             }
 
             .jouTiBox {
@@ -470,7 +470,7 @@ main {
                     &::before {
                         content: '';
                         position: absolute;
-                        background-image: url('/decorate_3_4.png');
+                        background-image: url('/decorate_3_4.webp');
                         width: 50px;
                         height: 100px;
                         background-size: contain;

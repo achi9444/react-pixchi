@@ -1,0 +1,22 @@
+@use "./variables" as *;
+
+.classMain {
+    padding-top: 69px;
+    background: #FFFDF3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h2 {
+        font-size: 3rem;
+        font-weight: $fw7;
+        color: $c_rd;
+        letter-spacing: .8rem;
+        padding-left: .8rem;
+        border: 5px solid $c_rd;
+        border-radius: 1rem;
+        padding: 10%;
+    }
+}

@@ -1,8 +1,13 @@
 import React from 'react'
+import "../styles/About.scss"
 
 const About = () => {
     return (
-        <div>About</div>
+        <>
+            <main className='aboutMain'>
+                <h2>正在拼湊一段，屬於我的旅程</h2>
+            </main>
+        </>
     )
 }
 

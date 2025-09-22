@@ -1,8 +1,12 @@
 import React from 'react'
-
+import "../styles/Classroom.scss"
 const Classroom = () => {
   return (
-    <div>Classroom</div>
+    <>
+      <main className='classMain'>
+        <h2>課堂準備中</h2>
+      </main>
+    </>
   )
 }
 

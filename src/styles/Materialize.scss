@@ -9,13 +9,14 @@
     align-items: center;
     overflow-x: hidden;
 
-    .materHeader{
+    .materHeader {
         height: 500px;
         width: 100%;
         display: flex;
         margin-bottom: 80px;
         justify-content: center;
     }
+
     .materTitle {
         display: flex;
         flex-direction: column;
@@ -89,7 +90,9 @@
                     gap: 30px;
                     margin-bottom: 30px;
 
-                    img {
+                    a {
+                        display: flex;
+                        justify-content: center;
                         aspect-ratio: 1 / 1;
                         width: 60%;
                     }
@@ -151,4 +154,8 @@
             }
         }
     }
+}
+
+.lb-number {
+    display: none !important;
 }

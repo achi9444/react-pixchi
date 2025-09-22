@@ -3,6 +3,11 @@ import { workInfo, levelData } from '../data/workInfo'
 import '../styles/Materialize.scss'
 import CarouselStage from '../components/CarouselStage'
 import { useLocation } from 'react-router-dom'
+import 'lightbox2/dist/css/lightbox.min.css';
+import 'lightbox2/dist/js/lightbox-plus-jquery.min.js';
+import $ from 'jquery';
+window.jQuery = $;
+
 
 const Materialize = () => {
   const { hash } = useLocation();
@@ -36,7 +41,9 @@ const Materialize = () => {
           <div className='cardList'>
             {item.map(work => (
               <div key={work.id} className="workCard">
-                <img src={work.img} alt={work.title} loading="lazy" />
+                <a href={work.img} data-lightbox="gallery" data-title={work.title}>
+                  <img src={work.img} alt={work.title} loading="lazy" />
+                </a>
                 <p>{work.title}</p>
               </div>
             ))}

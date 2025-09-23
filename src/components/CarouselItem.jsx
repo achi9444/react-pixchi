@@ -41,6 +41,7 @@ export default function CarouselItem({ src, index, current, images, title, setIs
                 transform: `translate(-50%, -50%) translateX(${offset}px)`,
                 position: 'absolute',
                 zIndex: isCenter ? 2 : 1,
+                pointerEvents: isCenter ? 'auto' : 'none'
             }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}

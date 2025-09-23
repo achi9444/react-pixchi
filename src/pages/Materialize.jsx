@@ -41,7 +41,7 @@ const Materialize = () => {
           <div className='cardList'>
             {item.map(work => (
               <div key={work.id} className="workCard">
-                <a href={work.img} data-lightbox="gallery" data-title={work.title}>
+                <a href={work.img} data-lightbox={`gallery-${work.id}`} data-title={work.title}>
                   <img src={work.img} alt={work.title} loading="lazy" />
                 </a>
                 <p>{work.title}</p>

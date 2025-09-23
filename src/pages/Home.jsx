@@ -56,11 +56,13 @@ const Home = () => {
                     <div className='portOut'>
                         <div className='portCard'>
                             <div className='card dino'>
-                                <img className='role' src="./compression/tyrannosaurus2.webp" alt="tyrannosaurus" loading="lazy" />
+                                <NavLink to={'/Materialize#level1'}>
+                                    <img className='role' src="./compression/tyrannosaurus2.webp" alt="tyrannosaurus" loading="lazy" />
+                                </NavLink>
                                 <div className='level'>
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                 </div>
-                                <NavLink to={'/Materialize#level1'}>
+                                <NavLink className='levelTag' to={'/Materialize#level1'}>
                                     首度同行
                                     <img src="./more.webp" alt="more" loading="lazy" />
                                 </NavLink>
@@ -69,12 +71,14 @@ const Home = () => {
                         </div>
                         <div className='portCard'>
                             <div className='card bird'>
-                                <img className='role' src="./compression/bird.webp" alt="bird" loading="lazy" />
+                                <NavLink to={'/Materialize#level2'}>
+                                    <img className='role' src="./compression/bird.webp" alt="bird" loading="lazy" />
+                                </NavLink>
                                 <div className='level'>
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                 </div>
-                                <NavLink to={'/Materialize#level2'}>
+                                <NavLink className='levelTag' to={'/Materialize#level2'}>
                                     進階試煉
                                     <img src="./more.webp" alt="more" loading="lazy" />
                                 </NavLink>
@@ -83,13 +87,15 @@ const Home = () => {
                         </div>
                         <div className='portCard'>
                             <div className='card lcd'>
-                                <img className='role' src="./compression/LCD.webp" alt="lcd" loading="lazy" />
+                                <NavLink to={'/Materialize#level3'}>
+                                    <img className='role' src="./compression/LCD.webp" alt="lcd" loading="lazy" />
+                                </NavLink>
                                 <div className='level'>
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                     <img src="./star.webp" alt="level" loading="lazy" />
                                 </div>
-                                <NavLink to={'/Materialize#level3'}>
+                                <NavLink className='levelTag' to={'/Materialize#level3'}>
                                     名匠之路
                                     <img src="./more.webp" alt="more" loading="lazy" />
                                 </NavLink>

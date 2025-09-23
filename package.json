@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "build": "^0.1.4",
     "jquery": "^3.7.1",
     "lightbox.js-react": "^1.6.2",
     "lightbox2": "^2.11.5",

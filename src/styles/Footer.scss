@@ -8,13 +8,21 @@ footer {
 
     nav {
         display: flex;
-        // align-items: center;
         align-items: stretch;
         justify-content: space-between;
         width: 100%;
         padding: 20px 80px;
         background: linear-gradient(to bottom, rgba(202, 160, 113), rgba(243, 215, 154));
 
+        @media (max-width:1024px) {
+            padding: 10px 20px;
+        }
+
+        @media (max-width:640px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
         .foot_logo {
             font-family: $family-2p;
@@ -25,6 +33,16 @@ footer {
         ul {
             display: flex;
             gap: 30px;
+
+            @media (max-width:1024px) {
+                gap: 15px;
+            }
+
+            @media (max-width:640px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
             li {
                 a {
@@ -38,10 +56,15 @@ footer {
             display: flex;
             gap: 30px;
 
+            @media (max-width:1024px) {
+                gap: 15px;
+            }
+            
             a {
                 img {
                     width: 35px;
                     height: 35px;
+                    aspect-ratio: 1 / 1;
                 }
             }
         }

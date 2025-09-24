@@ -10,8 +10,8 @@ export default function CarouselItem({ src, index, current, images, title, setIs
     const distance = (index - current + images.length) % images.length;
     const reverse = (current - index + images.length) % images.length;
     const shortest = distance <= reverse ? distance : -reverse;
-    const offset = shortest * 600;
-
+    const baseOffset = window.innerWidth <= 1024 ? 320 : 600;
+    const offset = shortest * baseOffset;
 
     useEffect(() => {
         if (isCenter && tiltRef.current) {

@@ -30,6 +30,12 @@
             color: $c_rd;
             letter-spacing: .8rem;
             padding-left: .8rem;
+
+            @media (max-width:640px) {
+                font-size: 2.2rem;
+                letter-spacing: .5rem;
+                padding-left: .5rem;
+            }
         }
 
         p {
@@ -39,6 +45,13 @@
             letter-spacing: 1.2rem;
             padding-left: 1.2rem;
             border-top: $c_rg 3px solid;
+
+            @media (max-width:640px) {
+                white-space: nowrap;
+                font-size: 1.2rem;
+                letter-spacing: .8rem;
+                padding-left: .8rem;
+            }
         }
 
     }
@@ -49,6 +62,8 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .workBox {
             display: flex;
@@ -72,7 +87,13 @@
                     width: 230px;
                     white-space: nowrap;
                     text-align: center;
-                    // margin-bottom: 80px;
+
+                    @media (max-width:640px) {
+                        font-size: 1.75rem;
+                        letter-spacing: .3rem;
+                        padding-left: .3rem;
+                        width: 170px;
+                    }
                 }
             }
 
@@ -81,6 +102,14 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: 30px;
                 margin-bottom: 30px;
+
+                @media (max-width:800px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media (max-width:550px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
 
                 .workCard {
                     display: flex;
@@ -95,6 +124,7 @@
                         justify-content: center;
                         aspect-ratio: 1 / 1;
                         width: 60%;
+                        min-width: 150px;
                     }
 
                     p {
@@ -107,50 +137,60 @@
         }
     }
 
+    .level1,
+    .level2,
+    .level3 {
+        .materTitle {
+            h2 {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    top: 37%;
+                    left: 100%;
+
+                    // @media (max-width:640px) {
+                    //     top: 20%;
+                    //     left: 80%;
+                    // }
+                }
+            }
+        }
+    }
+
     .level1 {
         .materTitle {
-            &::before {
-                content: '';
-                position: absolute;
-                background-image: url('/star.webp');
-                width: 50px;
-                height: 50px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                top: 37%;
-                right: 30%;
+            h2 {
+                &::before {
+                    background-image: url('/star.webp');
+                    width: 50px;
+                    height: 50px;
+                }
             }
         }
     }
 
     .level2 {
         .materTitle {
-            &::before {
-                content: '';
-                position: absolute;
-                background-image: url('/star2.webp');
-                width: 100px;
-                height: 50px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                top: 37%;
-                right: 30%;
+            h2 {
+                &::before {
+                    background-image: url('/star2.webp');
+                    width: 100px;
+                    height: 50px;
+                }
             }
         }
     }
 
     .level3 {
         .materTitle {
-            &::before {
-                content: '';
-                position: absolute;
-                background-image: url('/star3.webp');
-                width: 150px;
-                height: 50px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                top: 37%;
-                right: 25%;
+            h2 {
+                &::before {
+                    background-image: url('/star3.webp');
+                    width: 150px;
+                    height: 50px;
+                }
             }
         }
     }

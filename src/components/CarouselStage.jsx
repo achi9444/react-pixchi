@@ -6,7 +6,6 @@ import { workInfo, levelData } from '../data/workInfo.js';
 export default function CarouselStage() {
     const [current, setCurrent] = useState(0);
     const [flash, setFlash] = useState(false);
-    // const subset = workInfo.slice(24, 30);
     const team = levelData.level_3.group[0];
     const subset = team.item;
     const tag = team.tag;
@@ -49,7 +48,7 @@ export default function CarouselStage() {
                 ))}
             </div>
             <div className={styles.controls}>
-                <button onClick={() => handleChange(-1)}><img src="./left.webp" alt="left" /> </button>
+                <button onClick={() => handleChange(-1)}><img src="./left.webp" alt="left" />   </button>
                 <button onClick={() => handleChange(1)}><img src="./right.webp" alt="right" /></button>
             </div>
         </div>

@@ -7,7 +7,6 @@
     background: url("/bg_8.webp");
     background-position: center center;
     background-repeat: no-repeat;
-    // background: radial-gradient(ellipse at center, #cfa16d, #ffd39f);
     overflow: hidden;
     box-shadow: 0 3px 20px rgb(0, 0, 0, .3);
 
@@ -20,6 +19,7 @@
         justify-content: space-between;
         gap: 10px;
         width: 97%;
+        z-index: 2;
 
         button {
             padding: 8px 16px;
@@ -100,6 +100,11 @@
     object-fit: contain;
     transition: all 0.5s ease;
     display: block;
+
+    @media (max-width:640px) {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 .center {

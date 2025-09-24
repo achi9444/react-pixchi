@@ -45,9 +45,14 @@
         align-items: center;
         height: 950px;
         width: 100%;
-         @media (max-width:640px) {
+
+        @media (max-width:1024px) {
+            margin-top: 20px;
+        }
+
+        @media (max-width:640px) {
             justify-content: flex-start;
-         }
+        }
 
         .top1 {
             display: flex;
@@ -55,6 +60,11 @@
             align-items: center;
             padding-top: 75px;
             width: 80%;
+
+            @media (max-width:1024px) {
+                flex-direction: column;
+
+            }
 
             h2 {
                 color: $c_rl;
@@ -73,9 +83,18 @@
                 transform-origin: bottom center;
                 pointer-events: auto;
 
+                @media (max-width:1024px) {
+                    transform: scale(0.7);
+                    min-height: unset;
+                    transform-origin: top center;
+                    max-height: 380px;
+                    margin: 20px 0 70px;
+                }
+
                 @media (max-width:640px) {
                     transform: scale(0.6);
-                    transform-origin: center;
+                    max-height: 350px;
+
                 }
 
                 .me {
@@ -206,14 +225,22 @@
 
         @media (max-width:1024px) {
             padding: 0 50px;
+            height: auto;
         }
 
         .portTitle {
             display: flex;
             flex-direction: column;
             align-items: center;
-            // padding-top: 60px;
             position: relative;
+
+            @media (max-width:1024px) {
+                padding-top: 30%;
+            }
+
+            @media (max-width:640px) {
+                padding-top: 50%;
+            }
 
             &::before {
                 content: '';
@@ -225,6 +252,10 @@
                 background-repeat: no-repeat;
                 top: 15%;
                 right: -20%;
+
+                @media (max-width:1024px) {
+                    top: 70%;
+                }
 
                 @media (max-width:640px) {
                     display: none;
@@ -258,8 +289,13 @@
             gap: 100px;
 
             @media (max-width:1024px) {
-                gap: 30px;
                 width: 95%;
+                flex-direction: column;
+                padding-bottom: 55%;
+            }
+
+            @media (max-width:640px) {
+                padding-bottom: 90%;
             }
 
             .portCard {
@@ -284,11 +320,6 @@
                     justify-content: space-between;
                     position: relative;
 
-                    @media (max-width:1024px) {
-                        width: 80%;
-                        min-width: none;
-                    }
-
                     &:hover {
                         box-shadow: 0 0 12px rgba(255, 255, 0, 0.3);
                     }
@@ -309,6 +340,10 @@
                         gap: 2px;
                         left: 2%;
                         bottom: -5%;
+
+                        @media (max-width:1024px) {
+                            bottom: -3%;
+                        }
 
                         img {
                             width: 35px;
@@ -335,7 +370,9 @@
 
                         @media (max-width:1024px) {
                             font-size: 1rem;
+                            bottom: -3%;
                         }
+
 
                         img {
                             width: 12px;
@@ -351,6 +388,16 @@
                     display: flex;
                     align-items: flex-start;
                     height: 4em;
+
+                    @media (max-width:1024px) {
+                        width: 45vw;
+                        padding: 0;
+                    }
+
+                    @media (max-width:640px) {
+                        width: 60vw;
+                        padding: 0;
+                    }
                 }
             }
         }
@@ -594,6 +641,7 @@
 
             @media (max-width:640px) {
                 padding: 0 20px;
+                align-items: center;
             }
 
             &::before {
@@ -681,34 +729,63 @@
                     margin-right: 0;
                 }
 
+                @media (max-width:640px) {
+                    padding: 20px 35px;
+                }
+
                 p {
                     color: $c_22;
                 }
 
-                .text1 {
+                .desc1 {
                     line-height: 200%;
                     font-size: 1rem;
                     letter-spacing: .3rem;
                     padding-left: .3rem;
+
                     // white-space: nowrap;
+                    &.text3 {
+                        display: none;
+                    }
 
                     @media (max-width:640px) {
-                        font-size: .8rem;
+                        &.text1 {
+                            display: none;
+                        }
+
+                        &.text3 {
+                            display: block;
+                            font-size: .8rem;
+                        }
                     }
 
                 }
 
-                .text2 {
+                .desc2 {
                     font-size: 1.2rem;
                     font-weight: $fw7;
                     letter-spacing: .4rem;
                     padding-left: .4rem;
-                    // white-space: nowrap;
 
                     @media (max-width:768px) {
                         white-space: wrap;
                         font-size: 1rem;
                     }
+
+                    &.text4 {
+                        display: none;
+                    }
+
+                    @media (max-width:640px) {
+                        &.text2 {
+                            display: none;
+                        }
+
+                        &.text4 {
+                            display: block;
+                        }
+                    }
+
                 }
 
                 a {

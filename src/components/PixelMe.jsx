@@ -66,6 +66,8 @@ const colors = {
 const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
     const gridRef = useRef(null);
     const [animationDone, setAnimationDone] = useState(false);
+    const [progressPercent, setProgressPercent] = useState(0);
+
     // 判斷動靜
     const navType = performance.getEntriesByType('navigation')[0]?.type;
     const shouldAnimate = navType === 'navigate' || navType === 'reload';
@@ -125,6 +127,7 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
 
             // 進度=>不超過1(100%) elapsed過去
             const progress = Math.min(elapsed / totalDuration, 1);
+            setProgressPercent(Math.floor(progress * 100));
             const targetCount = Math.floor(shuffled.length * progress);
             // 確認現在有哪幾個沒有被加入
             for (let i = gridRef.current.childElementCount; i < targetCount; i++) {
@@ -148,7 +151,7 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
             if (progress < 1) {
                 // 刷新同步不掉幀
                 requestAnimationFrame(animate);
-            } 
+            }
             else {
                 if (onFinish) {
                     setTimeout(() => {
@@ -173,6 +176,12 @@ const PixelMe = ({ mode = 'auto', onFinish, onReady, className }) => {
                         height: `${map.length * pixelSize}px`,
                     }}
                 />
+                {isLoading && !animationDone && (
+                    <div className="progressText">
+                        {`${progressPercent}%`}
+                    </div>
+                )}
+
             </div>
         </>
     );

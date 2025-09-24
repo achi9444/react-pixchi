@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .myBox {
     // position: relative; // 改為 relative，避免覆蓋其他元素
     width: 100%;
@@ -9,12 +11,10 @@
     align-items: center;
     overflow: hidden;
     background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("/bg_1.webp") center/cover no-repeat;
-    // z-index: -10;
     pointer-events: none; // 不擋互動
 
     .me {
         position: absolute;
-        // bottom: 220px;
         width: 100%;
     }
 
@@ -34,6 +34,17 @@
         height: 15px;
         transform: translateY(0);
         opacity: 1;
+    }
+
+    .progressText {
+        position: absolute;
+        font-size: 1.5rem;
+        font-family: $family-2p;
+        letter-spacing: .5rem;
+        padding-left: .5rem;
+        color: $c_rd;
+        text-align: center;
+        bottom: 5%;
     }
 }
 

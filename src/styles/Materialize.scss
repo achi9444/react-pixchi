@@ -147,13 +147,11 @@
                     position: absolute;
                     background-size: contain;
                     background-repeat: no-repeat;
-                    top: 37%;
-                    left: 100%;
+                    top: -31%;
 
-                    // @media (max-width:640px) {
-                    //     top: 20%;
-                    //     left: 80%;
-                    // }
+                    @media (max-width:640px) {
+                        top: -45%;
+                    }
                 }
             }
         }
@@ -166,6 +164,13 @@
                     background-image: url('/star.webp');
                     width: 50px;
                     height: 50px;
+                    left: 45%;
+
+                    @media (max-width:640px) {
+                        left: 43.5%;
+                        width: 40px;
+                        height: 40px;
+                    }
                 }
             }
         }
@@ -178,6 +183,13 @@
                     background-image: url('/star2.webp');
                     width: 100px;
                     height: 50px;
+                    left: 37.5%;
+
+                    @media (max-width:640px) {
+                        left: 35%;
+                        width: 80px;
+                        height: 40px;
+                    }
                 }
             }
         }
@@ -190,6 +202,13 @@
                     background-image: url('/star3.webp');
                     width: 150px;
                     height: 50px;
+                    left: 33.5%;
+
+                    @media (max-width:640px) {
+                        left: 30.5%;
+                        width: 120px;
+                        height: 40px;
+                    }
                 }
             }
         }

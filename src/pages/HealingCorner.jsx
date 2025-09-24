@@ -19,7 +19,8 @@ const HealingCorner = () => {
               <p>
                 Fuse Beads 最早是在 1960 年代，<br />
                 由瑞典人 Gunnar Knutsson 發明的。<br />
-                一開始，其實是設計給養老院，用來作為一種治療用途的工具。<br />
+                一開始，其實是設計給養老院，<br />
+                用來作為一種治療用途的工具。<br />
                 當時的玩法很簡單，就是把塑膠珠子排在釘板上，<br />
                 再用膠水，把它們固定在紙板或木板上。<br />
                 最後，就能做成一些小裝飾，或者是杯墊來使用。
@@ -48,7 +49,8 @@ const HealingCorner = () => {
             <h4>專注力與耐心培養</h4>
             <img className="horiLine" src="./decorate_6.webp" alt="decorate" loading="lazy" />
             <p>在拼豆的過程中，每一顆珠子都需要精準地擺放。<br />
-              透過集中注意力於每一顆豆豆，創作者可以進入一種近似冥想的狀態，<br />
+              透過集中注意力於每一顆豆豆，<br />
+              創作者可以進入一種近似冥想的狀態，<br />
               感受「一顆一顆慢慢完成」的節奏。<br />
               這不僅能培養專注力，<br />
               也有助於提升心智的穩定性與耐性。<br />
@@ -71,7 +73,8 @@ const HealingCorner = () => {
               在拼豆的過程中，<br />
               創作者需要同時觀察位置並精準操作手指，<br />
               這能有效鍛鍊手眼協調與精細動作。<br />
-              拾取和放置每一顆拼豆，可以提升兒童的抓握能力與手指靈活性；<br />
+              拾取和放置每一顆拼豆，<br />
+              可以提升兒童的抓握能力與手指靈活性；<br />
               對長者而言，也可作為復健過程中的自我照護工具，<br />
               維持手部靈活度與精準度。<br />
               過持續練習，即使是一顆顆微小的豆豆，<br />
@@ -86,7 +89,8 @@ const HealingCorner = () => {
               拼豆不只是把顆粒排好而已，<br />
               它同時也是一門「色彩與構圖」的藝術。<br />
               在選色與設計的過程中，<br />
-              創作者需要思考色彩的搭配、明暗的過渡，以及整體的畫面平衡。<br />
+              創作者需要思考色彩的搭配、明暗的過渡，<br />
+              以及整體的畫面平衡。<br />
               這樣的過程能培養對色彩的敏感度，<br />
               也能訓練空間與畫面的規劃能力。<br />
               不論是漸層設計、角色還原，還是自由創作，<br />
@@ -102,7 +106,7 @@ const HealingCorner = () => {
               <p>
                 在拼豆創作的過程中，專注於手中的每一個動作，<br />
                 能幫助緩解壓力，並引發內在的情感釋放。<br />
-                同時，創作者可以透過顏色的選擇來表達當下的情緒或心境，<br />
+                同時，透過顏色的選擇來表達當下的情緒或心境，<br />
                 這不僅讓作品呈現個人風格，<br />
                 也能激發更深層的自我對話。<br />
                 過「從無到有」的創作過程，<br />
@@ -110,6 +114,10 @@ const HealingCorner = () => {
                 讓心靈在創作中得到療癒與滿足。
               </p>
               <img className="flower" src="./flower.webp" alt="cuteRabbit" loading="lazy" />
+              <div className="rabbitHouse">
+                <img className="mochi2" src="./mochi.webp" alt="cuteRabbit" loading="lazy" />
+                <img className="flower2" src="./flower.webp" alt="cuteRabbit" loading="lazy" />
+              </div>
             </div>
           </div>
         </section>

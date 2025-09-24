@@ -5,7 +5,7 @@ const About = () => {
     return (
         <>
             <main className='aboutMain'>
-                <h2>正在拼湊一段，屬於我的旅程</h2>
+                <h2>故事準備中</h2>
             </main>
         </>
     )

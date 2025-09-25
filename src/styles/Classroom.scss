@@ -1,23 +1,50 @@
 @use "./variables" as *;
 
 .classMain {
-    padding-top: 69px;
+    padding-top: 90px;
     background: #FFFDF3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 
-    h2 {
-        font-size: 3rem;
-        font-weight: $fw7;
-        color: $c_rd;
-        letter-spacing: .8rem;
-        padding: 10% 10% 10% calc(10% + .8rem);
-        border: 5px solid $c_rd;
-        border-radius: 1rem;
-        white-space: nowrap;
+    .perler-header {
+        display: flex;
+        flex-direction: column;
         text-align: center;
+        gap: 30px;
+        margin-bottom: 30px;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: $fw7;
+            color: $c_rd;
+            letter-spacing: .8rem;
+            padding-left: .8rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $c_22;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    }
+
+    .perler-main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+        .perler-header h2 {
+            font-size: 2rem;
+        }
+
+        .perler-header p {
+            font-size: 0.9rem;
+            padding: 0 10px;
+        }
     }
 }

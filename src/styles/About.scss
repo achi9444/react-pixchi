@@ -1,23 +1,150 @@
 @use "./variables" as *;
 
-.aboutMain {
-    padding-top: 69px;
+.about-main {
     background: #FFFDF3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 
-    h2 {
-        font-size: 3rem;
-        font-weight: $fw7;
-        color: $c_rd;
-        letter-spacing: .8rem;
-        padding: 10% 10% 10% calc(10% + .8rem);
-        border: 5px solid $c_rd;
-        border-radius: 1rem;
-        white-space: nowrap;
-        text-align: center;
+    .about-contact {
+        padding: 10% 0 10%;
+        display: flex;
+        flex-direction: column; // 預設上下排列
+        align-items: start;
+        gap: 4rem;
+        max-width: 1300px;
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: $fw7;
+            color: $c_rd;
+            letter-spacing: 0.8rem;
+            padding-left: 0.8rem;
+            margin-bottom: 30px;
+        }
+
+        .about-me,
+        .contact-form {
+            width: 48%;
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            p {
+                font-size: 1rem;
+                line-height: 2;
+                letter-spacing: .1rem;
+                padding-left: .1rem;
+                color: $c_22;
+                max-width: 700px;
+            }
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                max-width: 500px;
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 500;
+                    color: $c_22;
+
+                    input,
+                    textarea {
+                        margin-top: 0.5rem;
+                        padding: 0.5rem;
+                        font-size: 1rem;
+                        border: 1px solid $c_rg;
+                        border-radius: 5px;
+                    }
+
+                    textarea {
+                        resize: vertical;
+                        min-height: 120px;
+                    }
+                }
+
+                button {
+                    align-self: flex-start;
+                    padding: 0.6rem 1.2rem;
+                    font-size: 1rem;
+                    font-weight: $fw7;
+                    background-color: $c_rl;
+                    color: $c_yw;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background 0.3s;
+
+                    &:hover {
+                        background-color: $c_rd;
+                    }
+
+                    @media (max-width:1024px) {
+                        align-self: center;
+                    }
+                }
+            }
+
+            .success-message {
+                padding: 20px 0 100px;
+                color: $c_rl;
+                font-weight: 600;
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
+
+    /* 桌機板 ≥1024px 才左右排列 */
+    @media (max-width: 1024px) {
+        .about-contact {
+            flex-direction: column;
+            padding: 15% 0 10%;
+
+            .about-me,
+            .contact-form {
+                width: 100%;
+                text-align: center;
+                align-items: center;
+
+                p {
+                    letter-spacing: unset;
+                    padding-left: unset;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        .about-contact {
+            padding: 25% 0 15%;
+            width: 90%;
+
+            .about-me {
+                p {
+                    font-size: .8rem
+                }
+            }
+        }
     }
 }

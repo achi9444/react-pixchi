@@ -1,0 +1,129 @@
+@use "./variables" as *;
+
+.perler-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.perler-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    button,
+    input[type="color"],
+    label input[type="number"] {
+        cursor: pointer;
+    }
+
+    button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 6px;
+        background: $c_rl;
+        color: $c_yw;
+        font-size: 14px;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: $c_rd;
+        }
+    }
+
+    input[type="color"] {
+        width: 40px;
+        height: 40px;
+        border: none;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: $c_rd;
+
+        input[type="number"] {
+            margin-left: 6px;
+            padding: 4px;
+            width: 60px;
+            border: 1px solid $c_rl;
+            border-radius: 4px;
+        }
+    }
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        &:checked {
+            accent-color: $c_rd;
+        }
+    }
+}
+
+.perler-grid {
+    display: inline-block;
+    border: 2px solid #ccc;
+    user-select: none;
+    max-height: 80vh;
+    overflow: auto; // ✅ 內部可滾動
+    -webkit-overflow-scrolling: touch;
+}
+
+.perler-row {
+    display: flex;
+}
+
+.perler-cell {
+    border: 1px solid #eee;
+    cursor: crosshair;
+    touch-action: none; // ❌ 防止手勢干擾
+
+    &:hover {
+        outline: 1px solid #999;
+    }
+}
+
+/* 手機板 RWD */
+@media (max-width: 600px) {
+    .perler-tools {
+        justify-content: center;
+        gap: 6px;
+
+        button {
+            font-size: 12px;
+            padding: 4px 8px;
+        }
+
+        input[type="color"] {
+            width: 30px;
+            height: 30px;
+        }
+
+        label {
+            font-size: 12px;
+
+            input[type="number"] {
+                width: 50px;
+                padding: 2px;
+            }
+        }
+
+        input[type="checkbox"] {
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .perler-cell {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}

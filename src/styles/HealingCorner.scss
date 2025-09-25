@@ -250,6 +250,10 @@
 
         >div {
             gap: 50px;
+
+            @media (max-width:640px) {
+                gap: 20px;
+            }
         }
 
         h4 {
@@ -415,6 +419,7 @@
                         align-items: end;
                         gap: 30px;
                         margin-top: 40px;
+
                         img {
                             width: 60px;
                             height: auto;

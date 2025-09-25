@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
 .myBox {
-    // position: relative; // 改為 relative，避免覆蓋其他元素
     width: 100%;
     min-height: 100%; // 改為合理的高度
     height: 100vh;
@@ -12,6 +11,11 @@
     overflow: hidden;
     background: linear-gradient(to bottom, rgb(229, 248, 255, .1), rgb(116, 201, 231, .5)), url("/bg_1.webp") center/cover no-repeat;
     pointer-events: none; // 不擋互動
+
+    @media (max-width:450px) {
+        justify-content: start;
+        padding: 5px 0;
+    }
 
     .me {
         position: absolute;
@@ -45,6 +49,11 @@
         color: $c_rd;
         text-align: center;
         bottom: 5%;
+
+        @media (max-width:450px) {
+            bottom: -.8%;
+            background: rgba($c_bw, .5);
+        }
     }
 }
 

@@ -73,6 +73,12 @@
                 white-space: nowrap;
                 padding-left: clamp(.7rem, 1vw, 1.2rem);
                 letter-spacing: clamp(.7rem, 1vw, 1.2rem);
+
+                @media (max-width:640px) {
+                    font-size: 2.2rem;
+                    padding-left: .4;
+                    letter-spacing: .4;
+                }
             }
 
             .h_me {
@@ -94,7 +100,6 @@
                 @media (max-width:640px) {
                     transform: scale(0.6);
                     max-height: 350px;
-
                 }
 
                 .me {
@@ -110,6 +115,11 @@
             align-items: center;
             margin: 10px 0;
             position: relative;
+
+            @media (max-width:640px) {
+                margin: 30px 0;
+                gap: 20px;
+            }
 
             &::before {
                 content: '';
@@ -128,14 +138,12 @@
             }
 
             h2 {
-
                 font-size: 6rem;
                 font-weight: $fw7;
                 padding-left: 3rem;
                 letter-spacing: 3rem;
                 line-height: normal;
                 color: #FEF2BD;
-                // -webkit-text-stroke: #D0955B 3px;
                 text-shadow:
                     -5px -5px 0 #D0955B,
                     5px -5px 0 #D0955B,
@@ -151,6 +159,17 @@
                         4px -4px 0 #D0955B,
                         -4px 4px 0 #D0955B,
                         4px 4px 0 #D0955B;
+                }
+
+                @media (max-width:450px) {
+                    font-size: 3.5rem;
+                    padding-left: 1.7rem;
+                    letter-spacing: 1.7rem;
+                    text-shadow:
+                        -3px -3px 0 #D0955B,
+                        3px -3px 0 #D0955B,
+                        -3px 3px 0 #D0955B,
+                        3px 3px 0 #D0955B;
                 }
             }
 
@@ -171,6 +190,7 @@
                 margin: 10px 0;
                 animation: arrow 2.5s ease-in-out;
                 animation-iteration-count: infinite;
+
             }
         }
 
@@ -209,7 +229,6 @@
     }
 
     .portfolio {
-        // position: relative;
         width: 100%;
         height: 918px;
         background-image: url('/bg_2.webp');
